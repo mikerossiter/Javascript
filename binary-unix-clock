@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Binary Unix Clock In JavaScript</title>
+  <meta charset="UTF-8">
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400' rel='stylesheet'>
+</head>
+<body>
+<style>
+body {
+    background: #111111;
+}
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	width: 11em;      
+    background-color: white;       
+    border: 2px solid black;      
+    padding: 10px;      
+    word-wrap: break-word;   
+    transform: translateX(-50%) translateY(-50%);
+    color: #ff33ff;
+    //font-size: 2pt;
+    font-family: 'Alegreya Sans SC', Arial, sans-serif;
+    letter-spacing: 7px;
+	font-size:8vw
+}
+
+</style>
+<div id="DigitalCLOCK" class="clock" onload="showTime()"></div>
+
+  <script>
+function showTime(){
+    
+  var s = (Math.round(Date.now() / 1000)).toString(2); 
+    
+  var time = s;
+  document.getElementById("DigitalCLOCK").innerText = time;
+  //document.getElementById("DigitalCLOCK").textContent = time;
+    
+  setTimeout(showTime, 1000);
+    
+}
+ 
+showTime();
+</script>
+
+</body>
+</html>
